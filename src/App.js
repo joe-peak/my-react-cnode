@@ -1,29 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
 import { Route, BrowserRouter ,Switch, Link} from 'react-router-dom';
 import IndexList from '@/containers/IndexList';
-
+import './index.less';
 import 'components/Indexlist/index.less';
+import 'components/Common/index.less';
+import { Footer , Loading} from 'components/Common';
+
 class App extends Component {
   render() {
+    const { isFetching } = this.props.IndexList;
     return (
-      <div className="App">
-        <BrowserRouter>
-            <Switch>
-                <Route path="/" component={IndexList}></Route>
-                <Route path="/test" render={ props => {
-                    return (
-                        <div>
-                            <Link to="/">返回首页</Link>
-                        </div>
-                    );
-                }}></Route>
-            </Switch>
-        </BrowserRouter>
-      </div>
+        <div  className='box'>
+            <BrowserRouter>
+                <Switch>
+                    <Route path="/" exact component={IndexList}></Route>
+                    <Route path="/test"  render={ () => { return (<div>Hahah <Link to="/">Go Home</Link></div>);}}></Route>
+                </Switch>
+            </BrowserRouter>
+            {
+                isFetching && <Loading/>
+            }
+
+            {
+                !isFetching && <Footer/>
+            }
+        </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(App);

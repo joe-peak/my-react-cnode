@@ -1,0 +1,1 @@
+export { IndexList } from '@redux/reducers/indexlist';

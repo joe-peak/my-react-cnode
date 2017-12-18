@@ -1,23 +1,95 @@
-ul {
-    text-decoration: none;
+.list-wrapper {
+    position: relative;
     display: flex;
-    li {
-        text-align: center;
-        height: 30px;
+    flex-direction: column;
+    nav {
+        ul.header-nav {
+            text-decoration: none;
+            list-style: none;
+            display: flex;
+            height: 30px;
+            padding: 0;
+            margin: 0;
+            margin-top: 5px;
+            justify-content: space-around;
+            li {
+                text-align: center;
+                padding: 0 5px;
+                line-height: 30px;
+                a {
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+
+            .on {
+                border-bottom: 3px solid #00C5CD;;
+            }
+        }
+    }
+
+    .list-box {
+        overflow: auto;
+        flex: 1;
+        .topicItem {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px;
+            height: 50px;
+            .user-avatar {
+                height: 50px;
+                width: 50px;
+            }
+
+            .topic-info {
+                color: #555;
+                height: 100%;
+                width: 100%;
+                margin-left: 8px;
+                display: flex;
+                min-width: 0;
+                flex-direction: column;
+
+                .topic-title{
+                    width: 100%;
+                    text-align: left;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+
+                    .topic-good {
+                        font-weight: 600;
+                        color: blue;
+                        margin: 0 5px;
+                    }
+
+                    .topic-top {
+                        font-weight: 600;
+                        color: red;
+                        margin: 0 5px;
+                    }
+                }
+                .topic-tips {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 5px;
+
+                    .share-count {
+                        flex: 1;
+                        text-align: left;
+                    }
+
+                    .create-time {
+                        flex: 1;
+                        text-align: right;
+                    }
+                }
+            }
+        }
     }
 }
 
-.topicItem {
-    display: flex;
-    flex-direction: row;
-    .user-avatar {
-        height: 50px;
-        width: 50px;
-    }
-
-    .topic-info {
-        color: red;
-    }
-}
 
 
