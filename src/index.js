@@ -25,4 +25,5 @@ const render = Component => {
 render(App);
 // ReactDOM.render(<App />, document.getElementById('root'));
 // test git checkout -b dev
+// I am developed on the branch dev
 registerServiceWorker();
