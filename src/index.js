@@ -4,13 +4,13 @@ import { Provider } from 'react-redux';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { store } from '@redux/store';
-// const RootApp = () => {
-//     return (
-//         <Provider store={store}>
-//             <App/>
-//         </Provider>
-//     );
-// }
+const RootApp = () => {
+    return (
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    );
+}
 
 const render = Component => {
     const App =  () => (
@@ -18,7 +18,6 @@ const render = Component => {
             <Component/>
         </Provider>
     );
-
     ReactDOM.render(<App />, document.getElementById('root'));
 };
 
@@ -26,4 +25,5 @@ render(App);
 // ReactDOM.render(<App />, document.getElementById('root'));
 // test git checkout -b dev
 // I am developed on the branch dev
+// just test...
 registerServiceWorker();
